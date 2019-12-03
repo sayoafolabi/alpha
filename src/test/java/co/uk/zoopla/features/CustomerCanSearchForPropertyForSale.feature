@@ -16,11 +16,11 @@ Scenario Outline: Customer can search for any property
 Examples:
   |Location| MinPrice|MaxPrice|Property|Bed|PropertyType|
   |Manchester|£120,000|£230,000|Houses |3+ | Houses     |
-  |London    |£250,000|£400,000|Farms/land|No min| Property|
-  |Coventry|£120,000|£230,000|Flats |3+ | Flats     |
-  |Birmingham|         |       |      |   |           |
+  #|London    |£250,000|£400,000|Farms/land|No min| Property|
+  #|Coventry|£120,000|£230,000|Flats |3+ | Flats     |
+  #|Birmingham|         |       |      |   |           |
 
-
+  @ignore
   Scenario Outline: Customer cannot search for property with missing values
     Given I navigate to zoopla homepage
     When I enter a "<Location>" in the search text box
@@ -35,6 +35,7 @@ Examples:
       |Location| MinPrice|MaxPrice|Property|Bed|PropertyType|
       |        |£120,000|£230,000|Houses |3+ | Houses     |
 
+  @ignore
   Scenario Outline: Error page is displayed for invalid search
     Given I navigate to zoopla homepage
     When I enter a "<Location>" in the search text box
